@@ -1,0 +1,58 @@
+// @flow
+
+import {BvmAcct, BudgetController, SystemController} from '../src';
+
+test('createNewAccount', () => {
+  const from = new BvmAcct();
+  const createNewAccount = new BvmAcct();
+  let transaction;
+
+  transaction = SystemController.createNewAccount(
+    from.pubKey,
+    createNewAccount.pubKey,
+    123,
+    0,
+    BudgetController.space,
+    BudgetController.controllerId,
+  );
+
+  expect(transaction.keys).toHaveLength(2);
+  expect(transaction.controllerId).toEqual(SystemController.controllerId);
+  // TODO: Validate transaction contents more
+});
+
+test('transferDifs', () => {
+  const from = new BvmAcct();
+  const to = new BvmAcct();
+  let transaction;
+
+  transaction = SystemController.transferDifs(from.pubKey, to.pubKey, 123);
+
+  expect(transaction.keys).toHaveLength(2);
+  expect(transaction.controllerId).toEqual(SystemController.controllerId);
+  // TODO: Validate transaction contents more
+});
+
+test('transferReputation', () => {
+  const from = new BvmAcct();
+  const to = new BvmAcct();
+  let transaction;
+
+  transaction = SystemController.transferReputation(from.pubKey, to.pubKey, 123);
+
+  expect(transaction.keys).toHaveLength(2);
+  expect(transaction.controllerId).toEqual(SystemController.controllerId);
+  // TODO: Validate transaction contents more
+});
+
+test('assign', () => {
+  const from = new BvmAcct();
+  const to = new BvmAcct();
+  let transaction;
+
+  transaction = SystemController.assignToController(from.pubKey, to.pubKey);
+
+  expect(transaction.keys).toHaveLength(1);
+  expect(transaction.controllerId).toEqual(SystemController.controllerId);
+  // TODO: Validate transaction contents more
+});
