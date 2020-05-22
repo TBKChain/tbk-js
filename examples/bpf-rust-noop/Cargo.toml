@@ -1,0 +1,22 @@
+
+# Note: This crate must be built using build.sh
+
+[package]
+name = "bitconch-bpf-rust-noop"
+version = "0.16.0"
+description = "Bitconch BPF noop program written in Rust"
+authors = ["Bitconch Maintainers <maintainers@bitconch.com>"]
+repository = "https://github.com/bitconch/bus"
+license = "Apache-2.0"
+homepage = "https://bitconch.io/"
+edition = "2018"
+
+[dependencies]
+bitconch-sdk-bpf-utils = { path = "../../bpf-sdk/rust/rust-utils" }
+
+[workspace]
+members = []
+
+[lib]
+crate-type = ["cdylib"]
+name = "bitconch_bpf_rust_noop"

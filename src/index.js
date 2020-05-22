@@ -1,18 +1,16 @@
  /// @flow
-export {BvmAcct} from './bvm-acct';
-export {BpfControllerLoader} from './bvm-dapp-mounter';
-export {BudgetController} from './bvm-script';
-export {Connection} from './netutility';
-export {ControllerLoader} from './dapp-mounter';
-export {NativeControllerLoader} from './builtin-mounter';
-export {BvmAddr} from './bvm-addr';
-export {SystemController} from './sys-dapp';
-export {Asset, AssetCount} from './asset-dapp';
-export {Transaction, TxOperation} from './tx-dapp';
-export {launchThenAcknowledgeTx} from './launch-then-acknowledge-tx';
+export {BusAccount} from './bus-account';
+export {BpfControllerLoader} from './bpfcontroller-loader';
+export {BudgetController} from './budget-controller';
+export {Connection} from './connection';
+export {ControllerLoader} from './controller-loader';
+export {NativeControllerLoader} from './nativecontroller-loader';
+export {PubKey} from './pubkey';
+export {SystemController} from './system-controller';
+export {Token, TokenCount} from './token-controller';
+export {Transaction, TxOperation} from './transaction-controller';
+export {sendAndconfmTx} from './util/send-and-confm-tx';
 export {
-  launchThenAcknowledgeNativeTxn,
-} from './launch-then-acknowledge-original-tx';
-export {RpcCall} from './rpc-call';
-export {RpcParameter} from './rpc-parameter';
-export {PreCondition} from './preconditions';
+  sendAndConfmNativeTxn,
+} from './util/send-and-confm-original-tx';
+export {testnetChannelEndpoint} from './util/testnet';

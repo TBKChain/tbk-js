@@ -1,23 +1,22 @@
 // @flow
 
-import {BvmAcct} from '../../src';
+import {BusAccount} from '../../src';
 import {url} from '../url';
 import {mockRpc} from '../__mocks__/node-fetch';
 
 export function mockGetRecentBlockhash() {
-  const recentPackagehash = new BvmAcct();
+  const recentPackagehash = new BusAccount();
 
   mockRpc.push([
     url,
     {
-      // method: 'getLatestBlockhash',
-      method: 'getLatestTransactionSeal',
+      method: 'getLatestBlockhash',
       params: [],
     },
     {
       error: null,
       result: [
-        recentPackagehash.pubKey.converseToBase58(),
+        recentPackagehash.pubKey.toBase58(),
         {
           difsPerSignature: 42,
         },
